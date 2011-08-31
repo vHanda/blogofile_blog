@@ -170,6 +170,10 @@ class Post(object):
         if not self.updated.tzinfo:
             pytz.timezone(self.__timezone).localize(self.updated)
 
+        # Use the site author if blog post author is not present
+        if not self.author and bf.config.site.author:
+            self.author = bf.config.site.author
+
         if not self.title:
             self.title = "Untitled - {0}".format(self.date)
         if not self.slug:
