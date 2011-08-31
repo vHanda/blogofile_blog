@@ -47,6 +47,7 @@ def run():
     from . import post
     from . import archives
     from . import categories
+    from . import tags
     from . import chronological
     from . import feed
     from . import permapage
@@ -73,4 +74,5 @@ def run():
     chronological.run()
     archives.run()
     categories.run()
+    tags.run()
     feed.run()
